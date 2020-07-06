@@ -1,14 +1,22 @@
 import configparser
 
-class SiCore:
-    def __init__(self, dbpath):
-        self.instance = "NEW"
+class SICore:
+    def __init__(self, dbpath = ""):
         self.dbpath = dbpath
-        
-    
+        self._load_configurations()
+
+#Properties
+
+    @property
+    def instance_name(self) -> str:
+        return _get_instance_name(self.estimator)
+
+#Internal Functions
+
     def _load_configurations(self):
         self.config = configparser.ConfigParser()
         self.config.sections()
         self.config.read('config.ini')
-        self.dbpath = self.config["DEFAULT"]["DataPath"]
+        if self.dbpath == "":
+            self.dbpath = self.config["DEFAULT"]["DataPath"]
 

@@ -1,7 +1,9 @@
-from sibase.SiApi import SiApi as api
-from sibase.SiCore import SiCore as core
+from sibase.SIApi import SIApi as api
+from sibase.SICore import SICore as core
+from sibase.Config import *
+
+si = core()
 
 
 
-si = core("./data")
-print(si.dbpath)
+print(GetConfigValue("api", "port"))
