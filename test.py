@@ -1,9 +1,5 @@
-from sibase.SIApi import SIApi as api
-from sibase.SICore import SICore as core
-from sibase.Config import *
+from tests.test_Config import test_Config
+import unittest
 
-si = core()
-
-
-
-print(GetConfigValue("api", "port"))
+unittest.main(test_Config, exit=False)
+unittest.main()

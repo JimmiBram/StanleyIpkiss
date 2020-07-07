@@ -7,9 +7,9 @@ class SICore:
 
 #Properties
 
-    @property
-    def instance_name(self) -> str:
-        return _get_instance_name(self.estimator)
+    # @property
+    # def instance_name(self) -> str:
+    #     return _get_instance_name(self.estimator)
 
 #Internal Functions
 
@@ -20,3 +20,9 @@ class SICore:
         if self.dbpath == "":
             self.dbpath = self.config["DEFAULT"]["DataPath"]
 
+
+    def MaskValue(self, Value):
+        return 123
+
+    def MaskFloatValue(self, Value):
+        return float(self.MaskData(Value))
